@@ -1,0 +1,13 @@
+{
+  "name": "cnb-rates-fiori",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "npx ui5 serve --open",
+    "serve": "ui5 serve --open",
+    "build": "ui5 build"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^3.11.0"
+  }
+}

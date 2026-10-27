@@ -1,0 +1,40 @@
+<mvc:View
+    controllerName="demo.cnb.controller.App"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true">
+    <App>
+        <Page title="Kurzovní lístek ČNB">
+            <content>
+                <VBox class="sapUiSmallMargin">
+                    <HBox alignItems="Center" wrap="Wrap">
+                        <Label text="Částka v CZK" class="sapUiTinyMarginEnd"/>
+                        <Input id="amountInput" value="1000" width="180px"/>
+                        <Button text="Přepočítat" press=".onConvert" type="Emphasized" class="sapUiTinyMarginBegin"/>
+                    </HBox>
+
+                    <Table id="ratesTable" items="{/rates}" noDataText="Žádné kurzy" growing="true">
+                        <columns>
+                            <Column><Text text="Kód"/></Column>
+                            <Column><Text text="Název"/></Column>
+                            <Column hAlign="End"><Text text="Množství"/></Column>
+                            <Column hAlign="End"><Text text="Kurz"/></Column>
+                            <Column hAlign="End"><Text text="Výsledek"/></Column>
+                        </columns>
+                        <items>
+                            <ColumnListItem>
+                                <cells>
+                                    <Text text="{code}"/>
+                                    <Text text="{name}"/>
+                                    <Text text="{amount}"/>
+                                    <Text text="{rate}"/>
+                                    <Text text="{result}"/>
+                                </cells>
+                            </ColumnListItem>
+                        </items>
+                    </Table>
+                </VBox>
+            </content>
+        </Page>
+    </App>
+</mvc:View>
